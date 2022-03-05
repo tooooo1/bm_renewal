@@ -1,46 +1,66 @@
 import { useState, useEffect } from 'react';
 import * as Styled from './styled';
-// import axios from 'axios';
+import { Items } from "../../model/interface";
+import axios, { AxiosPromise } from 'axios';
+// import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
 type Props = {};
 
 const Home = (props: Props) => {
-    // const [data, setData] = useState({ items: [] });
-    // useEffect(() => {
-    // const fetchData = async () => {
-    //     const result = await axios(
-    //         'https://us-central1-react-baemin.cloudfunctions.net/merchantInfo'
-    //     );
-    //     setData(result.data);
-    //     };
-    //     fetchData();
-    // }, []);
+    const [items, setItems] = useState<Items[]>([]);
+    useEffect(() => {
+        const fetchData = async () => {
+        
+        const axiosPromise = axios(
+            'https://us-central1-react-baemin.cloudfunctions.net/merchantInfo'
+        ) as AxiosPromise<{ items: Items[] }>;
+        
+        const { data } = await axiosPromise;
+        
+        setItems(data.items);
+        console.log(data.items);
+        };
+        fetchData();
+    }, []);
 
-    const [choiceMenu, setChoiceMenu] = useState<string>('분식');
-    const [activeIndex, setActiveIndex] = useState<number>(0);
-
-    const tabClickHandler = (index:number) => {
-        setActiveIndex(index);
-    };
+// axios 문서
+// 제네릭.
 
     
 
     return (
         <Styled.Wrapper>
-            <Styled.Title> { choiceMenu }</Styled.Title>
-            <Styled.Menu> </Styled.Menu>
+            {/* <Tabs>
+                <TabList>
+                    <Tab>One</Tab>
+                    <Tab>Two</Tab>
+                    <Tab>Three</Tab>
+                </TabList>
+
+                <TabPanels>
+                    <TabPanel>
+                        <p>one!</p>
+                    </TabPanel>
+                <TabPanel>
+                    <p>two!</p>
+                </TabPanel>
+                        
+                    <TabPanel>
+                        <p>three!</p>
+                    </TabPanel>
+                </TabPanels>
+            </Tabs> */}
 
 
+            {
+                items.map((item, i) => (
+                <li key={i}>
+                    {item.name}
+                </li>
+            ))
+            }
 
-
-
-
-
-
-            {/* {data.items.map((item) => (
-                <li key={item}>
-            </li>
-            ))} */}
+            
         </Styled.Wrapper>
   );
 }
