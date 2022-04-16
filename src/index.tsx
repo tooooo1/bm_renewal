@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD:src/index.js
 import { Provider } from 'react-redux'
 import { store } from './app/store'
 
@@ -11,6 +12,15 @@ ReactDOM.render(
     <Provider store={store}>
       <App />
     </Provider>
+=======
+import { ChakraProvider } from '@chakra-ui/react'
+
+ReactDOM.render(
+  <React.StrictMode>
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
+>>>>>>> parent of 9890bbf (refactor : ts -> js 변경):src/index.tsx
   </React.StrictMode>,
   document.getElementById('root')
 );
