@@ -4,7 +4,7 @@ const MenuBar = () => {
     <div className="hbox space-between m(auto) w(80%) p(1rem)">
       <div className="hbox gap(5vw)">
         {menu.map((i) => (
-          <div>{i}</div>
+          <div className="hover:pointer(cursor)">{i}</div>
         ))}
       </div>
       <input
