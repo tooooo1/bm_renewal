@@ -4,8 +4,8 @@ const getMe: Parameters<typeof rest.get>[1] = (_, res, ctx) => {
   return res(
     ctx.status(200),
     ctx.json({
-      name: '김토스',
-      rrn: '840218-2813218',
+      id: 'test1',
+      pw: 'test1!',
     })
   );
 };
