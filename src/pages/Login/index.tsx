@@ -46,6 +46,8 @@ const Login = () => {
               className="w(100%) p(22/20) r(6) b(1) bc(#ddd) focus:bc(#2ac1bc)"
             />
           </div>
+          <div>아이디:test1</div>
+          <div>비밀번호:test1!</div>
 
           <button
             disabled={id.length < 4 || pw.length < 4}
