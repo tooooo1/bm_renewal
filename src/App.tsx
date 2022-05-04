@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home, Login } from './pages';
+import { Home, Login, Delivery, Bmart } from './pages';
 import { Header, Footer } from './components';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
@@ -23,6 +23,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/bmart" element={<Bmart />} />
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>
