@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home } from './pages';
+import { Home, Login } from './pages';
+import { Header, Footer } from './components';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
@@ -18,9 +19,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 };
