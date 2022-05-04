@@ -1,8 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 
+interface Props {
+  title: string;
+  location: string;
+}
+
 const Header = () => {
   let navigate = useNavigate();
-  const menu = ['배달', 'B마트', '이용방법', '새소식', '가맹점'];
+  const menu = [
+    { title: '배달', location: 'delivery' },
+    { title: 'B마트', location: 'bmart' },
+    { title: '이용방법', location: 'delivery' },
+    { title: '새소식', location: 'delivery' },
+    { title: '가맹점', location: 'delivery' },
+  ];
 
   const logout = () => {
     navigate('/');
@@ -21,14 +32,20 @@ const Header = () => {
           <img
             onClick={() => navigate('/')}
             className="hover:pointer(cursor)"
-            src={'src/assets/logo.png'}
+            src={'/src/assets/logo.png'}
             width={100}
             alt="logo"
           />
           <ul className="hbox ml(4vw) font(18) gap(3vw)">
-            {menu.map((i) => (
-              <li key={i.toString()} className="hover:pointer(cursor) hover:c(#2ac1bc)">
-                {i}
+            {menu.map(({ title, location }: Props) => (
+              <li
+                key={title}
+                onClick={() => {
+                  navigate(`/${location}`);
+                }}
+                className="hover:pointer(cursor)+c(#2ac1bc)"
+              >
+                {title}
               </li>
             ))}
           </ul>
@@ -36,12 +53,16 @@ const Header = () => {
         <div className="hbox gap(10) c(gray) hover:pointer(cursor)">
           <input
             placeholder="찾는 메뉴가 뭐예요?"
-            className="bg(#f1f1f1) b(none) r(15) p(10/50/10/30) focus:outline(none)"
+            className="bg(#f1f1f1) b(none) r(15) p(10/50/10/30) focus:outline(none)
+            background-image:url('src/assets/search.png')
+            background-repeat(no-repeat)
+            background-position(99%)
+            "
           />
           <img
             onClick={cart}
             className="hover:pointer(cursor) m(0/1rem)"
-            src={'src/assets/cart.png'}
+            src={'/src/assets/cart.png'}
             width={25}
             alt="logo"
           />
