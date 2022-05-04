@@ -16,8 +16,11 @@ const Login = () => {
   }, []);
 
   const loginAvailable = () => {
-    if (login) navigate('/');
-    else {
+    if (login) {
+      navigate('/');
+      localStorage.setItem('id', id);
+      localStorage.setItem('pw', pw);
+    } else {
       alert('아이디/비밀번호를 다시 확인해주세요.');
     }
   };
