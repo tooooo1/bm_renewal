@@ -1,4 +1,4 @@
-import Logo from '../../assets/logo.png/';
+import Logo from '../../assets/logo.png';
 
 const Footer = () => {
   const menu = ['About', '공지사항', '이용약관', '개인정보처리방침', '대량구매/제휴안내'];
@@ -33,7 +33,7 @@ const Footer = () => {
               key={i.toString()}
               className="inline-block after::w(1)
             after::h(10) after::m(0/10)
-            after::content(|)"
+            after::content('|')"
             >
               {i}
             </p>

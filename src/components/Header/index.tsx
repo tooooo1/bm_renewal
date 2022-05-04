@@ -1,4 +1,4 @@
-import Logo from '../../assets/logo.png/';
+import Logo from '../../assets/logo.png';
 
 const Header = () => {
   const menu = ['배달', 'B마트', '이용방법', '새소식', '가맹점'];
@@ -9,7 +9,9 @@ const Header = () => {
           <img className="hover:pointer(cursor)" src={Logo} width={100} alt="logo" />
           <ul className="hbox ml(4vw) font(18) gap(3vw)">
             {menu.map((i) => (
-              <li className="hover:pointer(cursor) hover:c(#2ac1bc)">{i}</li>
+              <li key={i.toString()} className="hover:pointer(cursor) hover:c(#2ac1bc)">
+                {i}
+              </li>
             ))}
           </ul>
         </div>
