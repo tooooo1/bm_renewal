@@ -1,12 +1,17 @@
 import Banner from '../../assets/banner.png';
+import sushi from '../../assets/menu/sushi.png';
+import jajangmyeon from '../../assets/menu/jajangmyeon.png';
+import chicken from '../../assets/menu/chicken.png';
+import rice from '../../assets/menu/rice.png';
+import cupcake from '../../assets/menu/cupcake.png';
 import { MenuItem } from '../../components';
 
 const menuList = [
-  { title: '돈까스,회,일식', img: '/src/assets/menu/sushi.png' },
-  { title: '중식', img: '/src/assets/menu/jajangmyeon.png' },
-  { title: '치킨', img: '/src/assets/menu/chicken.png' },
-  { title: '백반', img: '/src/assets/menu/rice.png' },
-  { title: '카페,디저트', img: '/src/assets/menu/cupcake.png' },
+  { title: '돈까스,회,일식', img: sushi },
+  { title: '중식', img: jajangmyeon },
+  { title: '치킨', img: chicken },
+  { title: '백반', img: rice },
+  { title: '카페,디저트', img: cupcake },
 ];
 
 interface Props {

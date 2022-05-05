@@ -54,7 +54,7 @@ const Header = () => {
           <input
             placeholder="찾는 메뉴가 뭐예요?"
             className="bg(#f1f1f1) b(none) r(15) p(10/50/10/30) focus:outline(none)
-            background-image:url('src/assets/search.png')
+            background-image(url('src/assets/search.png'))
             background-repeat(no-repeat)
             background-position(99%)
             "
