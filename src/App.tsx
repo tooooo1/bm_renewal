@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/delivery" element={<Delivery />} />
         <Route path="/bmart" element={<Bmart />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 };
