@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/logo.png';
+import cartPNG from '../../assets/cart.png';
 
 interface Props {
   title: string;
@@ -32,7 +34,7 @@ const Header = () => {
           <img
             onClick={() => navigate('/')}
             className="hover:pointer(cursor)"
-            src={'/src/assets/logo.png'}
+            src={logo}
             width={100}
             alt="logo"
           />
@@ -62,7 +64,7 @@ const Header = () => {
           <img
             onClick={cart}
             className="hover:pointer(cursor) m(0/1rem)"
-            src={'/src/assets/cart.png'}
+            src={cartPNG}
             width={25}
             alt="logo"
           />
