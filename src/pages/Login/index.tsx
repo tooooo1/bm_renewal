@@ -16,6 +16,7 @@ const Login = () => {
   }, []);
 
   const loginAvailable = () => {
+    console.log(id, pw);
     if (login) {
       navigate('/');
       localStorage.setItem('id', id);
@@ -28,7 +29,7 @@ const Login = () => {
   return (
     <div>
       <div className="vbox w(70%) m(auto) pack p(100/0)">
-        <div className="w(400)">
+        <form className="w(400)">
           <div className="pack font(32) bold">로그인</div>
           <div>
             <div className="mt(4rem) mb(10) pl(4)">아이디</div>
@@ -46,8 +47,6 @@ const Login = () => {
               className="w(100%) p(22/20) r(6) b(1) bc(#ddd) focus:bc(#2ac1bc)"
             />
           </div>
-          <div>아이디:test1</div>
-          <div>비밀번호:test1!</div>
 
           <button
             disabled={id.length < 4 || pw.length < 4}
@@ -57,7 +56,18 @@ const Login = () => {
           >
             로그인
           </button>
-        </div>
+        </form>
+        <ul className="pack c(#777) mt(2rem) font(14px) font-family('Pretendard-Regular')">
+          <li>
+            <a href="">회원가입</a>
+          </li>
+          <li className="before::content('|') before::m(0/20)">
+            <a href="https://baemin.netlify.app/find">아이디 찾기</a>
+          </li>
+          <li className="before::content('|') before::m(0/20)">
+            <a href="https://baemin.netlify.app/find">비밀번호 찾기</a>
+          </li>
+        </ul>
       </div>
     </div>
   );
