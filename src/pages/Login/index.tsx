@@ -59,13 +59,17 @@ const Login = () => {
         </form>
         <ul className="pack c(#777) mt(2rem) font(14px) font-family('Pretendard-Regular')">
           <li>
-            <a href="">회원가입</a>
+            <a className="pointer">회원가입</a>
           </li>
           <li className="before::content('|') before::m(0/20)">
-            <a href="https://baemin.netlify.app/find">아이디 찾기</a>
+            <a className="pointer" onClick={() => navigate('/find')}>
+              아이디 찾기
+            </a>
           </li>
           <li className="before::content('|') before::m(0/20)">
-            <a href="https://baemin.netlify.app/find">비밀번호 찾기</a>
+            <a className="pointer" onClick={() => navigate('/find')}>
+              비밀번호 찾기
+            </a>
           </li>
         </ul>
       </div>
