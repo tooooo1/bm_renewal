@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home, Login, Delivery, Bmart } from './pages';
+import { Home, Login, Delivery, Bmart, Find } from './pages';
 import { Header, Footer } from './components';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Pretendard-Medium', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   }
+  ::selection {
+    background-color: #2ac1bc;
+    color: white;
+  }
 `;
 
 const App = () => {
@@ -25,6 +29,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/delivery" element={<Delivery />} />
         <Route path="/bmart" element={<Bmart />} />
+        <Route path="/find" element={<Find />} />
       </Routes>
       <Footer />
     </BrowserRouter>
