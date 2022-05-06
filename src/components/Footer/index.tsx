@@ -1,4 +1,4 @@
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo2.png';
 
 const Footer = () => {
   const menu = ['About', '공지사항', '이용약관', '개인정보처리방침', '대량구매/제휴안내'];
@@ -15,29 +15,32 @@ const Footer = () => {
     '© Woowa Brothers Corp. All rights reserved',
   ];
   return (
-    <div className="hbox pack bg(#FAFAFA)">
-      <div>
-        <img src={Logo} width={100} alt="logo" />
-      </div>
-      <div>
-        <ul className="hbox ml(4vw) gap(3vw)">
-          {menu.map((i) => (
-            <li key={i.toString()} className="hover:pointer(cursor)">
-              {i}
-            </li>
-          ))}
-        </ul>
-        <div className="flex c(#999999)">
-          {ptag.map((i) => (
-            <p
-              key={i.toString()}
-              className="inline-block after::w(1)
-            after::h(10) after::m(0/10)
+    <div className="pack bg(#FAFAFA)">
+      <div className="hbox pack pt(3rem) pb(4rem) w(50%)">
+        <div className="mr(6rem)">
+          <img src={Logo} width={150} alt="logo" />
+        </div>
+
+        <div className="vbox w(100%)">
+          <ul className="hbox mb(2vh) gap(3vw)">
+            {menu.map((i) => (
+              <li key={i.toString()} className="hover:pointer(cursor)">
+                {i}
+              </li>
+            ))}
+          </ul>
+
+          <div className="c(#999999)">
+            {ptag.map((i) => (
+              <p
+                key={i.toString()}
+                className="inline-block font(13) m(2/0) after::m(0/10)
             after::content('|')"
-            >
-              {i}
-            </p>
-          ))}
+              >
+                {i}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </div>

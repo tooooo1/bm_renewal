@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo2.png';
 import cartPNG from '../../assets/cart.png';
 
 interface Props {
@@ -28,14 +28,14 @@ const Header = () => {
   };
 
   return (
-    <div className="m(auto) w(80%) p(1rem)">
+    <div className="m(auto) w(80%) p(2rem)">
       <div className="hbox space-between">
         <div className="hbox">
           <img
             onClick={() => navigate('/')}
             className="hover:pointer(cursor)"
             src={logo}
-            width={100}
+            width={150}
             alt="logo"
           />
           <ul className="hbox ml(4vw) font(18) gap(3vw)">
@@ -58,7 +58,9 @@ const Header = () => {
             className="bg(#f1f1f1) b(none) r(15) p(10/50/10/30) focus:outline(none)
             bg-image(url('src/assets/search.png'))
             background-repeat(no-repeat)
-            background-position(99%)
+            background-position(95%)
+            background-size(25px)
+            pointer
             "
           />
           <img
