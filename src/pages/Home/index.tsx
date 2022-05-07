@@ -15,9 +15,43 @@ const menuList = [
   { title: '카페,디저트', img: cupcake },
 ];
 
+const DiscountList = [
+  {
+    middleTitle: '육즙팡팡! 오븐마루 치킨',
+    title: '최대 6천원 할인',
+    substr1: '국내산 100% 냉장육만 고집합니다',
+    substr2: '순살은 다리살로 부드러움 끝판왕',
+  },
+  {
+    middleTitle: '쌀통닭 전 메뉴',
+    title: '최대 5천원 할인',
+    substr1: '100% 쌀가루로 더 바삭하고 맛있는 쌀통닭',
+    substr2: '매주 수요일, 일요일',
+  },
+  {
+    middleTitle: '빕스 모든 메뉴',
+    title: '1만 2천원 할인',
+    substr1: '홈파티의 정석!',
+    substr2: '집에서 즐기는 빕스 다이닝',
+  },
+  {
+    middleTitle: '매주 월/화/수/목',
+    title: '최대 6천원 할인',
+    substr1: '화끈하게 찾아왔다! 신메뉴 출시!',
+    substr2: '마라와 아수라의 뜨거운 만남!',
+  },
+];
+
 interface Props {
   title: string;
   img: string;
+}
+
+interface discountProps {
+  middleTitle: string;
+  title: string;
+  substr1: string;
+  substr2: string;
 }
 
 const Home = () => {
@@ -31,30 +65,15 @@ const Home = () => {
       </div>
       <div className="pack font(2rem) mb(6vh) font-family('Pretendard-ExtraBold')">오늘의 할인</div>
       <div className="hbox pack flex-wrap w(70%) mb(6vh)">
-        <Discount
-          middleTitle="육즙팡팡! 오븐마루 치킨"
-          title="최대 6천원 할인"
-          substr1="국내산 100% 냉장육만 고집합니다"
-          substr2="순살은 다리살로 부드러움 끝판왕"
-        />
-        <Discount
-          middleTitle="쌀통닭 전 메뉴"
-          title="최대 5천원 할인"
-          substr1="100% 쌀가루로 더 바삭하고 맛있는 쌀통닭"
-          substr2="매주 수요일, 일요일"
-        />
-        <Discount
-          middleTitle="빕스 모든 메뉴"
-          title="1만 2천원 할인"
-          substr1="홈파티의 정석!"
-          substr2="집에서 즐기는 빕스 다이닝"
-        />
-        <Discount
-          middleTitle="매주 월/화/수/목"
-          title="최대 6천원 할인"
-          substr1="화끈하게 찾아왔다! 신메뉴 출시!"
-          substr2="마라와 아수라의 뜨거운 만남!"
-        />
+        {DiscountList.map(({ middleTitle, title, substr1, substr2 }: discountProps) => (
+          <Discount
+            key={title}
+            middleTitle={middleTitle}
+            title={title}
+            substr1={substr1}
+            substr2={substr2}
+          />
+        ))}
       </div>
       <img src={BottomBanner} alt="bottombanner" />
     </div>

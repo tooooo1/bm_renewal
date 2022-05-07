@@ -1,11 +1,11 @@
-interface Props {
+interface discountProps {
   middleTitle: string;
   title: string;
   substr1: string;
   substr2: string;
 }
 
-const Discount = ({ middleTitle, title, substr1, substr2 }: Props) => {
+const Discount = ({ middleTitle, title, substr1, substr2 }: discountProps) => {
   return (
     <div className="bg(#eee) w(550px) m(1rem) p(2rem) pr(15rem) pointer">
       <div className="font(1.4rem)">{middleTitle}</div>
