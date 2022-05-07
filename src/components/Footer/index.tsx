@@ -1,7 +1,15 @@
 import Logo from '../../assets/logo2.png';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  const menu = ['About', '공지사항', '이용약관', '개인정보처리방침', '대량구매/제휴안내'];
+  let navigate = useNavigate();
+  const menu = [
+    { title: 'About', nav: 'about' },
+    { title: '공지사항', nav: 'about' },
+    { title: '이용약관', nav: 'about' },
+    { title: '개인정보처리방침', nav: 'about' },
+    { title: '대량구매/제휴안내', nav: 'about' },
+  ];
   const ptag = [
     '상호 : (주)우아한형제들',
     '대표 : 김범준',
@@ -24,8 +32,12 @@ const Footer = () => {
         <div className="vbox w(100%)">
           <ul className="hbox mb(2vh) gap(3vw)">
             {menu.map((i) => (
-              <li key={i.toString()} className="hover:pointer(cursor)">
-                {i}
+              <li
+                key={i.title}
+                className="hover:pointer(cursor)"
+                onClick={() => navigate(`/${i.nav}`)}
+              >
+                {i.title}
               </li>
             ))}
           </ul>
