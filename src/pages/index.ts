@@ -6,3 +6,4 @@ export { default as FindID } from './FindID';
 export { default as FindPW } from './FindPW';
 export { default as About } from './About';
 export { default as Food } from './Food';
+export { default as Cart } from './Cart';
