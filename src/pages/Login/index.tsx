@@ -17,7 +17,7 @@ const Login = () => {
 
   const loginAvailable = () => {
     console.log(id, pw);
-    if (login) {
+    if (id === 'test1' && pw == 'test1!') {
       navigate('/');
       localStorage.setItem('id', id);
       localStorage.setItem('pw', pw);
