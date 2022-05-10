@@ -5,7 +5,7 @@ const Footer = () => {
   let navigate = useNavigate();
   const menu = [
     { title: 'About', nav: 'about' },
-    { title: '공지사항', nav: 'about' },
+    { title: '공지사항', nav: 'notice' },
     { title: '이용약관', nav: 'about' },
     { title: '개인정보처리방침', nav: 'about' },
     { title: '대량구매/제휴안내', nav: 'about' },

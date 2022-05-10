@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home, Login, Delivery, Bmart, Find, About } from './pages';
+import { Home, Login, Delivery, Bmart, FindID, FindPW, About, Food } from './pages';
+import Notice from './pages/Notice';
 import { Header, Footer } from './components';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
@@ -29,8 +30,11 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/delivery" element={<Delivery />} />
         <Route path="/bmart" element={<Bmart />} />
-        <Route path="/find" element={<Find />} />
+        <Route path="/findid" element={<FindID />} />
+        <Route path="/findpw" element={<FindPW />} />
         <Route path="/about" element={<About />} />
+        <Route path="/food" element={<Food />} />
+        <Route path="/notice" element={<Notice />} />
       </Routes>
       <Footer />
     </BrowserRouter>
