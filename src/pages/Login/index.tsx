@@ -62,12 +62,12 @@ const Login = () => {
             <a className="pointer">회원가입</a>
           </li>
           <li className="before::content('|') before::m(0/20)">
-            <a className="pointer" onClick={() => navigate('/find')}>
+            <a className="pointer" onClick={() => navigate('/findid')}>
               아이디 찾기
             </a>
           </li>
           <li className="before::content('|') before::m(0/20)">
-            <a className="pointer" onClick={() => navigate('/find')}>
+            <a className="pointer" onClick={() => navigate('/findpw')}>
               비밀번호 찾기
             </a>
           </li>
