@@ -1,5 +1,5 @@
 import { memo, useEffect, useState, useRef } from 'react';
-import NoticeItem from '../../components/NoticeItem';
+import NoticeItem from '../components/NoticeItem';
 import ReactLoading from 'react-loading';
 
 const Notice = () => {
@@ -40,7 +40,9 @@ const Notice = () => {
         {itemLists.map((v, i) => {
           return <NoticeItem title={i + 1} content={i} key={v} />;
         })}
-        <div className="mt(2rem)">{isLoaded && <ReactLoading type="spin" color="#2ac1bc" />}</div>
+        <div className="mt(2rem)" ref={setTarget}>
+          {isLoaded && <ReactLoading type="spin" color="#2ac1bc" />}
+        </div>
       </div>
     </div>
   );

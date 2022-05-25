@@ -1,4 +1,4 @@
-import sushi from '../../assets/menu/sushi.png';
+import sushi from '../assets/menu/sushi.png';
 
 const Food = () => {
   return (

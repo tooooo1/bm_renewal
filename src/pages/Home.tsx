@@ -1,11 +1,11 @@
-import Banner from '../../assets/banner.png';
-import BottomBanner from '../../assets/bottombanner.png';
-import sushi from '../../assets/menu/sushi.png';
-import jajangmyeon from '../../assets/menu/jajangmyeon.png';
-import chicken from '../../assets/menu/chicken.png';
-import rice from '../../assets/menu/rice.png';
-import cupcake from '../../assets/menu/cupcake.png';
-import { MenuItem, Discount } from '../../components';
+import Banner from '../assets/banner.png';
+import BottomBanner from '../assets/bottombanner.png';
+import sushi from '../assets/menu/sushi.png';
+import jajangmyeon from '../assets/menu/jajangmyeon.png';
+import chicken from '../assets/menu/chicken.png';
+import rice from '../assets/menu/rice.png';
+import cupcake from '../assets/menu/cupcake.png';
+import { MenuItem, Discount } from '../components';
 
 const menuList = [
   { title: '돈까스,회,일식', img: sushi },

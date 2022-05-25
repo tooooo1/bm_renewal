@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useLogin from '../../hooks/useLogin';
+import useLogin from '../hooks/useLogin';
 
 const Login = () => {
   let navigate = useNavigate();
