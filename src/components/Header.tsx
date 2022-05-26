@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo2.png';
-import cartPNG from '../../assets/cart.png';
+import logo from '../assets/logo2.png';
+import cartPNG from '../assets/cart.png';
 
 interface Props {
   title: string;
