@@ -2,28 +2,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home, Login, Delivery, Bmart, FindID, FindPW, About, Food, Cart } from './pages';
 import Notice from './pages/Notice';
 import { Header, Footer } from './components';
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
-
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-  * {
-    outline: none;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Pretendard-Medium', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  }
-  ::selection {
-    background-color: #2ac1bc;
-    color: white;
-  }
-`;
 
 const App = () => {
   return (
     <BrowserRouter>
-      <GlobalStyle />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

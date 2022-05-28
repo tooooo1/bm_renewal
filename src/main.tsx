@@ -3,7 +3,7 @@ import '@adorable.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './font.css';
+import GlobalStyle from './GlobalStyle';
 
 import { worker } from './mocks/browser';
 
@@ -13,6 +13,7 @@ if (process.env.NODE_ENV === 'development') {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <GlobalStyle />
     <App />
   </React.StrictMode>
 );
