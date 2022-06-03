@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PALETTE from '../constants/palette';
 import styled from 'styled-components';
 import { TabBarProps } from '../types';
 
@@ -33,8 +32,6 @@ const TabBar = ({ menu, checkList }: TabBarProps) => {
 
 export default TabBar;
 
-// border-top: 4px solid ${PALETTE.LIGHT_010};
-
 const StyledMenuTitle = styled.li<{ check?: string; count: number }>`
   width: ${({ count }) => 100 / count}%;
   font-size: 0.9rem;
@@ -49,7 +46,7 @@ const StyledMenuTitle = styled.li<{ check?: string; count: number }>`
   }
   &#${({ check }) => check} {
     font-weight: bold;
-    color: ${PALETTE.PRI_MAIN};
-    border-bottom: 2px solid ${PALETTE.PRI_MAIN};
+    color: #2ac1bc;
+    border-bottom: 2px solid #2ac1bc;
   }
 `;
