@@ -9,9 +9,9 @@ const menu: IMenu[] = [
 ];
 
 const checkList: TabContents = {
-  0: <div>하1</div>,
-  1: <div>하2</div>,
-  2: <div>하3</div>,
+  0: <div>공지사항</div>,
+  1: <div>FAQ</div>,
+  2: <div>1:1 문의</div>,
 };
 
 const Food = () => {

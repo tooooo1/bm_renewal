@@ -1,6 +1,9 @@
+import { useCallback, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/image/logo2.png';
 import cartPNG from '../assets/image/cart.png';
+import Sidebar from './Sidebar';
 
 interface Props {
   title: string;
@@ -8,6 +11,7 @@ interface Props {
 }
 
 const Header = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
   let navigate = useNavigate();
   const menu = [
     { title: '배달', location: 'delivery' },
@@ -17,18 +21,22 @@ const Header = () => {
     { title: '가맹점', location: 'delivery' },
   ];
 
+  const handleCartOpen = useCallback((isOpen: boolean) => {
+    setIsCartOpen(isOpen);
+  }, []);
+
+  const cart = useCallback(() => {
+    setIsCartOpen(!isCartOpen);
+  }, []);
+
   const logout = () => {
     navigate('/');
     localStorage.clear();
   };
 
-  const cart = () => {
-    if (!localStorage.id) navigate('/login');
-    else navigate('/cart');
-  };
-
   return (
     <div className="m(auto) w(80%) p(2rem)">
+      {isCartOpen && <StyledDarkBody isOpen={isCartOpen} />}
       <div className="hbox space-between">
         <div className="hbox">
           <img
@@ -56,7 +64,7 @@ const Header = () => {
           <input
             placeholder="찾는 메뉴가 뭐예요?"
             className="bg(#f1f1f1) b(none) r(15) p(10/50/10/30) focus:outline(none)
-            bg-image(url('/src/assets/search.png'))
+            bg-image(url('/src/assets/image/search.png'))
             background-repeat(no-repeat)
             background-position(95%)
             background-size(25px)
@@ -70,6 +78,7 @@ const Header = () => {
             width={25}
             alt="logo"
           />
+          <Sidebar isOpen={isCartOpen} onSidebarOpen={handleCartOpen} />
           {!localStorage.id ? (
             <div className="b(2) p(4/12) r(16)" onClick={() => navigate('/login')}>
               로그인
@@ -86,3 +95,25 @@ const Header = () => {
 };
 
 export default Header;
+
+const colorAnimation = keyframes`
+  0% {
+    background: transparent;
+  }
+
+  100% {
+    background: rgba(38, 38, 38, 0.3);
+  }
+`;
+
+const StyledDarkBody = styled.div<{ isOpen: boolean }>`
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation: 0.5s ${colorAnimation} forwards;
+`;
