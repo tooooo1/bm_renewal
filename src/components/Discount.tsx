@@ -1,9 +1,4 @@
-interface discountProps {
-  middleTitle: string;
-  title: string;
-  substr1: string;
-  substr2: string;
-}
+import { discountProps } from '../types';
 
 const Discount = ({ middleTitle, title, substr1, substr2 }: discountProps) => {
   return (

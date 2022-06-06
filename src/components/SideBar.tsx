@@ -1,10 +1,7 @@
-export type SidebarProps = {
-  onSidebarOpen: (isOpen: boolean) => void;
-  isOpen: boolean;
-};
+import { SidebarProps } from '../types';
 
-const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
-  return <div className="fixed t(0) r(0) h(100%) bc(white)">하이</div>;
+const Sidebar = (props: SidebarProps) => {
+  return <div className="fixed t(0) r(0) h(100%) bc(white)">{props.isOpen}하이</div>;
 };
 
 export default Sidebar;

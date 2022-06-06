@@ -1,11 +1,12 @@
-import Banner from '../assets/banner.png';
-import BottomBanner from '../assets/bottombanner.png';
+import Banner from '../assets/image/banner.png';
+import BottomBanner from '../assets/image/bottombanner.png';
 import sushi from '../assets/menu/sushi.png';
 import jajangmyeon from '../assets/menu/jajangmyeon.png';
 import chicken from '../assets/menu/chicken.png';
 import rice from '../assets/menu/rice.png';
 import cupcake from '../assets/menu/cupcake.png';
 import { MenuItem, Discount } from '../components';
+import { discountProps } from '../types';
 
 const menuList = [
   { title: '돈까스,회,일식', img: sushi },
@@ -45,13 +46,6 @@ const DiscountList = [
 interface Props {
   title: string;
   img: string;
-}
-
-interface discountProps {
-  middleTitle: string;
-  title: string;
-  substr1: string;
-  substr2: string;
 }
 
 const Home = () => {
