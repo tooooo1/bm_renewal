@@ -17,7 +17,27 @@ export interface discountProps {
   substr2: string;
 }
 
-export interface SidebarProps {
+export type SidebarProps = {
   onSidebarOpen: (isOpen: boolean) => void;
   isOpen: boolean;
-}
+};
+
+export type OptionListProps = {
+  children: Children;
+  onSidebarOpen: (isOpen: boolean) => void;
+  isOpen: boolean;
+};
+
+export type OptionItemProps = {
+  children: Children;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  isShownAlways?: boolean;
+};
+
+export type Option = {
+  readonly optionName: string;
+  readonly isShownAlways?: boolean;
+  readonly onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+export type Children = React.ReactNode;
