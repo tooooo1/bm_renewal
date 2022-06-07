@@ -31,7 +31,6 @@ export type OptionListProps = {
 export type OptionItemProps = {
   children: Children;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  isShownAlways?: boolean;
 };
 
 export type Option = {
@@ -41,3 +40,11 @@ export type Option = {
 };
 
 export type Children = React.ReactNode;
+
+export type tempProps = {
+  id?: number;
+  imgSrc?: string;
+  name?: string;
+  price?: number;
+  count?: number;
+};

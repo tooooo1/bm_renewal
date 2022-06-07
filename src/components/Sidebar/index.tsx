@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import OptionItem from './OptionItem';
-import { Option, SidebarProps } from '../../types';
+import { tempProps, SidebarProps } from '../../types';
 import { useCookies } from 'react-cookie';
 import styled from 'styled-components';
 import useItems from '../../hooks/useItems';
@@ -36,46 +36,37 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
   //   ? cookies['UserInfo']['last_name'] + cookies['UserInfo']['first_name']
   //   : null;
 
-  const connection: Option[] = [
-    {
-      optionName: '로그아웃',
-      onClick: () => {
-        removeCookie('AccessToken');
-        removeCookie('RefreshToken');
-        removeCookie('UserInfo');
-        onSidebarOpen(false);
-      },
-    },
-  ];
-
   return (
     <SideBarWrapper
-      className="fixed top(0) right(0) w(80%) h(100%) z(1) bg(white) cursor(auto) transition(.5s)"
+      className="vbox space-between fixed top(0) right(0) w(80%) h(100%) z(1) bg(white) cursor(auto) transition(.5s)"
       ref={sidebarRef}
       isOpen={isOpen}
     >
-      <div className="hbox space-between p(25) font-family(BMHANNAPro) font(2rem) c(black)">
-        장바구니
-        <button onClick={() => onSidebarOpen(false)}>
-          <Close />
-        </button>
+      <div className="h(80%) scroll">
+        <div className="hbox space-between p(25) font-family(BMHANNAPro) font(2rem) c(black)">
+          장바구니
+          <button onClick={() => onSidebarOpen(false)}>
+            <Close />
+          </button>
+        </div>
+        {tempItems.map((option: tempProps, i) => (
+          <OptionItem key={option.name ? option.name.toString() : i} {...option} />
+        ))}
       </div>
-      {connection.map((option) => (
-        <OptionItem key={option.toString()} isShownAlways={option.isShownAlways}>
-          {option.optionName}
-        </OptionItem>
-      ))}
-      <div className="flex bt(1/rgb(229,231,235)) ">
-        <div className="hbox justify-between">
+      <div className="vbox bt(1/rgb(229,231,235)) p(1.5rem)">
+        <div className="hbox space-between pb(2rem)">
           <p>결제금액</p>
-          <p className="">
+          <p>
             10000원
             {/* {tempItems.reduce((acc, cur) => cur.price * cur.count + acc, 0).toLocaleString() + '원'} */}
           </p>
         </div>
-        <p className="pack" onClick={saveToLocalStorage}>
+        <button
+          className="pack bg(#2ac1bc) w(50%) m(0/auto) p(1rem) c(black) r(8)"
+          onClick={saveToLocalStorage}
+        >
           결제하기
-        </p>
+        </button>
       </div>
     </SideBarWrapper>
   );
