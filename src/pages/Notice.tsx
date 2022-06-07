@@ -40,9 +40,9 @@ const Notice = () => {
         {itemLists.map((v, i) => {
           return <NoticeItem title={i + 1} content={i} key={v} />;
         })}
-        <div className="mt(2rem)" ref={setTarget}>
+        {/* <div className="mt(2rem)" ref={setTarget}>
           {isLoaded && <ReactLoading type="spin" color="#2ac1bc" />}
-        </div>
+        </div> */}
       </div>
     </div>
   );
