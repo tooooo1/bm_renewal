@@ -3,7 +3,6 @@ import OptionItem from './OptionItem';
 import { Option, SidebarProps } from '../../types';
 import { useCookies } from 'react-cookie';
 import styled from 'styled-components';
-import logo from '../../assets/image/logo2.png';
 import useItems from '../../hooks/useItems';
 
 const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
@@ -14,6 +13,10 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
     'UserInfo',
   ]);
   const sidebarRef = useRef(null);
+
+  const saveToLocalStorage = () => {
+    localStorage.setItem('cartState', JSON.stringify(tempItems));
+  };
 
   const onClickOutside = (event: any) => {
     if (sidebarRef.current && !(sidebarRef.current as any).contains(event.target)) {
@@ -51,8 +54,8 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
       ref={sidebarRef}
       isOpen={isOpen}
     >
-      <div className="hbox space-between p(20)">
-        <img src={logo} width={150} alt="logo" />
+      <div className="hbox space-between p(25) font-family(BMHANNAPro) font(2rem) c(black)">
+        장바구니
         <button onClick={() => onSidebarOpen(false)}>
           <Close />
         </button>
@@ -62,6 +65,18 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
           {option.optionName}
         </OptionItem>
       ))}
+      <div className="flex bt(1/rgb(229,231,235)) ">
+        <div className="hbox justify-between">
+          <p>결제금액</p>
+          <p className="">
+            10000원
+            {/* {tempItems.reduce((acc, cur) => cur.price * cur.count + acc, 0).toLocaleString() + '원'} */}
+          </p>
+        </div>
+        <p className="pack" onClick={saveToLocalStorage}>
+          결제하기
+        </p>
+      </div>
     </SideBarWrapper>
   );
 };
