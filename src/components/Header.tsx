@@ -12,7 +12,7 @@ interface Props {
 
 const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const menu = [
     { title: '배달', location: 'delivery' },
     { title: 'B마트', location: 'bmart' },

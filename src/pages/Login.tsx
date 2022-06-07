@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useLogin from '../hooks/useLogin';
 
 const Login = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [id, setId] = useState<string>('');
   const [pw, setPw] = useState<string>('');
   const login = useLogin({ id, pw });

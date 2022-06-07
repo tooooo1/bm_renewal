@@ -2,7 +2,7 @@ import Logo from '../assets/image/logo2.png';
 import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const menu = [
     { title: 'About', nav: 'about' },
     { title: '공지사항', nav: 'notice' },

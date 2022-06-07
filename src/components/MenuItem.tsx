@@ -6,7 +6,7 @@ interface Props {
 }
 
 const MenuItem = ({ title, img }: Props) => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div
       className="vbox pack p(1rem) pt(1rem) r(16) hover:cursor(pointer)+bg(#eee)+c(#2ac1bc) transition(.3s)"
