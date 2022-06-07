@@ -1,5 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home, Login, Delivery, Bmart, FindID, FindPW, About, Food, Cart } from './pages';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { Home, Login, Delivery, Bmart, FindID, FindPW, About, Food, Cart, NotFound } from './pages';
 import Notice from './pages/Notice';
 import { Header, Footer } from './components';
 
@@ -18,6 +18,8 @@ const App = () => {
         <Route path="/food" element={<Food />} />
         <Route path="/notice" element={<Notice />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="/*" element={<Navigate replace to="/404" />} />
       </Routes>
       <Footer />
     </BrowserRouter>
