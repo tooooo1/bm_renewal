@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import OptionItem from './OptionItem';
-import { tempProps, SidebarProps } from '../../types';
+import { GoodsProps, SidebarProps } from '../../types';
 import { useCookies } from 'react-cookie';
 import styled from 'styled-components';
 import useItems from '../../hooks/useItems';
@@ -49,7 +49,7 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
             <Close />
           </button>
         </div>
-        {tempItems.map((option: tempProps, i) => (
+        {tempItems.map((option: GoodsProps, i) => (
           <OptionItem key={option.name ? option.name.toString() : i} {...option} />
         ))}
       </div>

@@ -41,7 +41,7 @@ export type Option = {
 
 export type Children = React.ReactNode;
 
-export type tempProps = {
+export type GoodsProps = {
   id?: number;
   imgSrc?: string;
   name?: string;

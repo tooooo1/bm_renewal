@@ -1,7 +1,6 @@
-import { tempProps } from '../../../types';
-import { im } from '../../../assets/detailMenu/coffee.png';
+import { GoodsProps } from '../../../types';
 
-const OptionItem = (props: tempProps) => {
+const OptionItem = (props: GoodsProps) => {
   console.log(props);
   const { id, imgSrc, name, price, count } = props;
   console.log('이름', name);
