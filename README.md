@@ -7,7 +7,6 @@
 
 # 기술
 - React + vite, TypeScript
-- React-Query, Recoil
+- Recoil
 - AdorableCSS
-- firebase
 - eslint, prettier
