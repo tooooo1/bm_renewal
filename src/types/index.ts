@@ -1,12 +1,12 @@
 export type TabContents = Record<number, JSX.Element>;
 
-export type IMenu = {
-  name: string;
+export type TwoStringProps = {
+  title: string;
   option: string;
 };
 
 export type TabBarProps = {
-  menu: IMenu[];
+  menu: TwoStringProps[];
   checkList: TabContents;
 };
 
@@ -47,4 +47,5 @@ export type GoodsProps = {
   name?: string;
   price?: number;
   count?: number;
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 };

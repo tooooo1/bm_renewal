@@ -4,21 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/image/logo2.png';
 import cartPNG from '../assets/image/cart.png';
 import Sidebar from './Sidebar';
-
-interface Props {
-  title: string;
-  location: string;
-}
+import { TwoStringProps } from '../types';
 
 const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const navigate = useNavigate();
   const menu = [
-    { title: '배달', location: 'delivery' },
-    { title: 'B마트', location: 'bmart' },
-    { title: '이용방법', location: 'delivery' },
-    { title: '새소식', location: 'delivery' },
-    { title: '가맹점', location: 'delivery' },
+    { title: '배달', option: 'delivery' },
+    { title: 'B마트', option: 'bmart' },
+    { title: '이용방법', option: 'delivery' },
+    { title: '새소식', option: 'delivery' },
+    { title: '가맹점', option: 'delivery' },
   ];
 
   const handleCartOpen = useCallback((isOpen: boolean) => {
@@ -47,11 +43,11 @@ const Header = () => {
             alt="logo"
           />
           <ul className="hbox ml(4vw) font(18) gap(3vw)">
-            {menu.map(({ title, location }: Props) => (
+            {menu.map(({ title, option }: TwoStringProps) => (
               <li
                 key={title}
                 onClick={() => {
-                  navigate(`/${location}`);
+                  navigate(`/${option}`);
                 }}
                 className="hover:pointer(cursor)+c(#2ac1bc)"
               >

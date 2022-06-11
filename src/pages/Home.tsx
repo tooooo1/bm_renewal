@@ -6,14 +6,14 @@ import chicken from '../assets/menu/chicken.png';
 import rice from '../assets/menu/rice.png';
 import cupcake from '../assets/menu/cupcake.png';
 import { MenuItem, Discount } from '../components';
-import { discountProps } from '../types';
+import { discountProps, TwoStringProps } from '../types';
 
 const menuList = [
-  { title: '돈까스,회,일식', img: sushi },
-  { title: '중식', img: jajangmyeon },
-  { title: '치킨', img: chicken },
-  { title: '백반', img: rice },
-  { title: '카페,디저트', img: cupcake },
+  { title: '돈까스,회,일식', option: sushi },
+  { title: '중식', option: jajangmyeon },
+  { title: '치킨', option: chicken },
+  { title: '백반', option: rice },
+  { title: '카페,디저트', option: cupcake },
 ];
 
 const DiscountList = [
@@ -43,18 +43,13 @@ const DiscountList = [
   },
 ];
 
-interface Props {
-  title: string;
-  img: string;
-}
-
 const Home = () => {
   return (
     <div className="vbox pack">
       <img src={Banner} alt="banner" />
       <div className="hbox m(auto) w(70%) p(4rem) mb(10vh) bb(1px) bc(#ddd) space-evenly">
-        {menuList.map(({ title, img }: Props) => (
-          <MenuItem key={title} img={img} title={title} />
+        {menuList.map(({ title, option }: TwoStringProps) => (
+          <MenuItem key={title} title={title} option={option} />
         ))}
       </div>
       <div className="pack font(2rem) mb(6vh) font-family('Pretendard-ExtraBold')">오늘의 할인</div>
