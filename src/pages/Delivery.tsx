@@ -9,7 +9,7 @@ const Delivery = () => {
     return () => clearInterval(timer);
   });
   return (
-    <div className="vbox pack">
+    <div className="vpack">
       <div className="w(100%) h(950) pointer-events(none) bg(url(https://www.coupangeats.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-14-at-8.50.38-PM.png))">
         <ReactPlayer
           url="https://www.youtube-nocookie.com/embed/hfWZ1DlLnqU?controls=0&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.coupangeats.com&amp;widgetid=1"

@@ -35,7 +35,7 @@ const Food = () => {
     <div>
       {isCartOpen && <StyledDarkBody isOpen={isCartOpen} />}
       <Sidebar isOpen={isCartOpen} onSidebarOpen={handleCartOpen} />
-      <div className="pack vbox w(70%) m(auto) p(100/0)">
+      <div className="vpack w(70%) m(auto) p(100/0)">
         <div className="hbox flex-wrap">
           {goodsItem.map((option: GoodsProps) => (
             <Goods key={option.name} onClick={cart} {...option} />

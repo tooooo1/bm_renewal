@@ -4,6 +4,7 @@ import ReactLoading from 'react-loading';
 
 const Notice = () => {
   const [target, setTarget] = useState(null);
+  const tempSetTarget = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [itemLists, setItemLists] = useState([1]);
 
@@ -34,13 +35,13 @@ const Notice = () => {
 
   return (
     <div>
-      <div className="vbox w(70%) m(auto) pack p(100/0)">
+      <div className="vpack w(70%) m(auto) p(100/0)">
         <div className="pack font(32) mb(3rem) bold">공지사항</div>
 
         {itemLists.map((v, i) => {
           return <NoticeItem title={i + 1} content={i} key={v} />;
         })}
-        <div className="mt(2rem)" ref={setTarget}>
+        <div className="mt(2rem)" ref={tempSetTarget}>
           {isLoaded && <ReactLoading type="spin" color="#2ac1bc" />}
         </div>
       </div>

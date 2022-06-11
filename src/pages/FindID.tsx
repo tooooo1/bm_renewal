@@ -16,7 +16,7 @@ const FindID = () => {
   };
   return (
     <div>
-      <div className="vbox w(70%) m(auto) pack p(100/0)">
+      <div className="vpack w(70%) m(auto) p(100/0)">
         <div className="w(400)">
           <div className="pack font(32) mb(3rem) bold">아이디 찾기</div>
           <div>

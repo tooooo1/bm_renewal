@@ -28,7 +28,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="vbox w(70%) m(auto) pack p(100/0)">
+      <div className="vpack w(70%) m(auto) p(100/0)">
         <form className="w(400)">
           <div className="pack font(32) bold">로그인</div>
           <div>

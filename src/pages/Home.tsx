@@ -45,7 +45,7 @@ const DiscountList = [
 
 const Home = () => {
   return (
-    <div className="vbox pack">
+    <div className="vpack">
       <img src={Banner} alt="banner" />
       <div className="hbox m(auto) w(70%) p(4rem) mb(10vh) bb(1px) bc(#ddd) space-evenly">
         {menuList.map(({ title, option }: TwoStringProps) => (

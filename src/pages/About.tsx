@@ -3,7 +3,7 @@ import logo from '../assets/image/logo.png';
 const About = () => {
   return (
     <div>
-      <div className="vbox w(70%) m(auto) pack p(100/0)">
+      <div className="vpack w(70%) m(auto) p(100/0)">
         <div className="hbox mt(5rem) mb(15rem)">
           <img src={logo} width="200" alt="logo" />
           <div className="ml(4rem)">
