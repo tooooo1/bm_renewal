@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.2",
-    "adorable-css": "^1.0.4",
+    "adorable-css": "^1.0.9",
     "classnames": "^2.3.1",
     "react": "^18.0.0",
     "react-cookie": "^4.1.1",
@@ -23,6 +23,7 @@
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
+    "@types/node": "^17.0.41",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/styled-components": "^5.1.25",
