@@ -1,15 +1,15 @@
 import { GoodsProps } from '../../../types';
+import sushi from '../../../assets/menu/sushi.png';
 
 const OptionItem = (props: GoodsProps) => {
   console.log(props);
   const { id, imgSrc, name, price, count } = props;
-  console.log('이름', name);
   return (
-    <div className="hbox w(100%) c(black) p(1rem/0) bb(1/rgb(229,231,235))">
-      <div className="w(30%)">
-        <img src={imgSrc} alt={imgSrc} />
+    <div className="hbox w(100%) c(black) p(1rem/1rem/1rem/3rem) bb(1/rgb(229,231,235))">
+      <div className="w(10%)">
+        <img src={sushi} alt={imgSrc} width='100' />
       </div>
-      <div className="w(70%)">
+      <div className="w(90%)">
         <div className="hbox space-between">
           <div>{name}</div>
           <div>{(price ? price : 1) * (count ? count : 1)}</div>
