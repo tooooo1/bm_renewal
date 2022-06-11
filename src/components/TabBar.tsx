@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { TabBarProps } from '../types';
+import { TabBarProps, TwoStringProps } from '../types';
 
 const TabBar = ({ menu, checkList }: TabBarProps) => {
   const [menuCheck, setMenuCheck] = useState<number>(0);
   const [check, setCheck] = useState<string>(menu[0].option);
 
-  const menuList = menu.map((i: any, index: number) => (
+  const menuList = menu.map((i: TwoStringProps, index: number) => (
     <StyledMenuTitle
       key={i.option}
       id={i.option}
@@ -14,7 +14,7 @@ const TabBar = ({ menu, checkList }: TabBarProps) => {
       count={menu.length}
       onClick={(e) => clickFunc(e, index)}
     >
-      {i.name}
+      {i.title}
     </StyledMenuTitle>
   ));
 
