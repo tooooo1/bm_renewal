@@ -38,7 +38,7 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
 
   return (
     <SideBarWrapper
-      className="vbox space-between fixed top(0) right(0) w(80%) h(100%) z(1) bg(white) cursor(auto) transition(.5s)"
+      className="vbox space-between fixed top(0) right(0) w(40%) h(100%) z(1) bg(white) cursor(auto) transition(.5s)"
       ref={sidebarRef}
       isOpen={isOpen}
     >
@@ -54,7 +54,7 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
         ))}
       </div>
       <div className="vbox bt(1/rgb(229,231,235)) p(1.5rem)">
-        <div className="hbox space-between pb(2rem)">
+        <div className="hbox space-between pb(2rem) pr(1.5rem)">
           <p>결제금액</p>
           <p>
             10000원
