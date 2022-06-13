@@ -1,21 +1,26 @@
 import { useEffect, useRef } from 'react';
-import OptionItem from './OptionItem';
+import CartItem from './CartItem';
 import { GoodsProps, SidebarProps } from '../../types';
-import { useCookies } from 'react-cookie';
+// import { useCookies } from 'react-cookie';
 import styled from 'styled-components';
 import useItems from '../../hooks/useItems';
+// import CartTotal from './CartTotal';
+import { useRecoilValue } from 'recoil';
+import { totalPriceState, deliveryChargeState } from '../../selectors';
 
 const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
-  const tempItems = useItems();
-  const [cookies, setCookie, removeCookie] = useCookies([
-    'AccessToken',
-    'RefreshToken',
-    'UserInfo',
-  ]);
+  const totalPrice = useRecoilValue(totalPriceState);
+  // const deliveryCharge = useRecoilValue(deliveryChargeState);
+  const cartItems = useItems();
+  // const [cookies, setCookie, removeCookie] = useCookies([
+  //   'AccessToken',
+  //   'RefreshToken',
+  //   'UserInfo',
+  // ]);
   const sidebarRef = useRef(null);
 
   const saveToLocalStorage = () => {
-    localStorage.setItem('cartState', JSON.stringify(tempItems));
+    localStorage.setItem('cartState', JSON.stringify(cartItems));
   };
 
   const onClickOutside = (event: any) => {
@@ -49,17 +54,14 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
             <Close />
           </button>
         </div>
-        {tempItems.map((option: GoodsProps, i) => (
-          <OptionItem key={option.name ? option.name.toString() : i} {...option} />
+        {cartItems.map((option: GoodsProps, i) => (
+          <CartItem key={option.name ? option.name.toString() : i} {...option} />
         ))}
       </div>
       <div className="vbox bt(1/rgb(229,231,235)) p(1.5rem)">
         <div className="hbox space-between pb(2rem) pr(1.5rem)">
           <p>결제금액</p>
-          <p>
-            10000원
-            {/* {tempItems.reduce((acc, cur) => cur.price * cur.count + acc, 0).toLocaleString() + '원'} */}
-          </p>
+          <p>{totalPrice}원</p>
         </div>
         <button
           className="pack bg(#2ac1bc) w(50%) m(0/auto) p(1rem) c(black) r(8)"

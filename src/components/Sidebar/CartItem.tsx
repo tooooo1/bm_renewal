@@ -1,13 +1,11 @@
-import { GoodsProps } from '../../../types';
-import sushi from '../../../assets/menu/sushi.png';
+import { GoodsProps } from '../../types';
+import sushi from '../../assets/menu/sushi.png';
 
-const OptionItem = (props: GoodsProps) => {
-  console.log(props);
-  const { id, imgSrc, name, price, count } = props;
+const CartItem = ({ imgSrc, name, price, count }: GoodsProps) => {
   return (
     <div className="hbox w(100%) c(black) p(2rem) bb(1/rgb(229,231,235))">
       <div className="w(14%)">
-        <img src={sushi} alt={imgSrc} width='50' />
+        <img src={sushi} alt={imgSrc} width="50" />
       </div>
       <div className="w(86%)">
         <div className="hbox space-between">
@@ -23,4 +21,4 @@ const OptionItem = (props: GoodsProps) => {
   );
 };
 
-export default OptionItem;
+export default CartItem;
