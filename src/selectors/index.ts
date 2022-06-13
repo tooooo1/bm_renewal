@@ -1,0 +1,23 @@
+// import _ from 'lodash';
+import { selector } from 'recoil';
+// import { AuthState } from '@constants';
+import { lineItemState } from '../atoms';
+
+// export const authSelector = selector({
+//   key: 'authSelector',
+//   get: ({ get }) => get(authState),
+//   set: ({ set }, newAuthState: AuthState) => set(authState, newAuthState),
+// });
+
+export const totalPriceState = selector({
+  key: 'totalPrice',
+  get: ({ get }) =>
+    get(lineItemState)
+      .map(({ totalPrice }) => totalPrice)
+      .reduce((prev: any, current: any) => prev + current, 0),
+});
+
+export const deliveryChargeState = selector({
+  key: 'deliveryCharge',
+  get: ({ get }) => (get(totalPriceState) >= 50000 ? 0 : 3000),
+});
