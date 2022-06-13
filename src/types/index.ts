@@ -22,30 +22,12 @@ export type SidebarProps = {
   isOpen: boolean;
 };
 
-export type OptionListProps = {
-  children: Children;
-  onSidebarOpen: (isOpen: boolean) => void;
-  isOpen: boolean;
-};
-
-export type OptionItemProps = {
-  children: Children;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
-
-export type Option = {
-  readonly optionName: string;
-  readonly isShownAlways?: boolean;
-  readonly onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
-
-export type Children = React.ReactNode;
-
 export type GoodsProps = {
   id?: number;
   imgSrc?: string;
   name?: string;
   price?: number;
   count?: number;
+  totalPrice?: number;
   onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 };
