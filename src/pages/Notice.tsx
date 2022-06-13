@@ -1,5 +1,5 @@
 import { memo, useEffect, useState, useRef } from 'react';
-import NoticeItem from '../components/NoticeItem';
+import NoticeItem from '@components/NoticeItem';
 import ReactLoading from 'react-loading';
 
 const Notice = () => {

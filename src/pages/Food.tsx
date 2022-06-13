@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import { Goods } from '../components';
-import TabBar from '../components/TabBar';
-import useItems from '../hooks/useItems';
+import { Goods, TabBar, SideBar } from '../components';
+import useItems from '@hooks/useItems';
 import { GoodsProps, TwoStringProps, TabContents } from '../types';
 import styled, { keyframes } from 'styled-components';
+import { useSetRecoilState } from 'recoil';
+import { lineItemState } from '../atoms';
 
 const menu: TwoStringProps[] = [
   { title: '공지사항', option: 'announcement' },
@@ -21,20 +21,27 @@ const checkList: TabContents = {
 const Food = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const goodsItem = useItems();
+  const setCart = useSetRecoilState(lineItemState);
 
   const handleCartOpen = useCallback((isOpen: boolean) => {
     setIsCartOpen(isOpen);
   }, []);
 
   const cart = useCallback(() => {
-    console.log('hi');
     setIsCartOpen(!isCartOpen);
+
+    // setCart((prev) => [
+    //   ...prev,
+    //   {
+    //     id: 1,
+    //   },
+    // ]);
   }, []);
 
   return (
     <div>
       {isCartOpen && <StyledDarkBody isOpen={isCartOpen} />}
-      <Sidebar isOpen={isCartOpen} onSidebarOpen={handleCartOpen} />
+      <SideBar isOpen={isCartOpen} onSidebarOpen={handleCartOpen} />
       <div className="vpack w(70%) m(auto) p(100/0)">
         <div className="hbox flex-wrap">
           {goodsItem.map((option: GoodsProps) => (

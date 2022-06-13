@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/image/logo2.png';
-import cartPNG from '../assets/image/cart.png';
-import Sidebar from './Sidebar';
+import logo from '@assets/image/logo2.png';
+import cartPNG from '@assets/image/cart.png';
+import Sidebar from './SideBar';
 import { TwoStringProps } from '../types';
 
 const Header = () => {

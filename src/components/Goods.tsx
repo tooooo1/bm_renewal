@@ -1,5 +1,5 @@
 import { GoodsProps } from '../types';
-import sushi from '../assets/menu/sushi.png';
+import sushi from '@assets/menu/sushi.png';
 
 const Goods = ({ name, price, onClick }: GoodsProps) => {
   return (
