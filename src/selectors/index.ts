@@ -13,8 +13,8 @@ export const totalPriceState = selector({
   key: 'totalPrice',
   get: ({ get }) =>
     get(lineItemState)
-      .map(({ totalPrice }) => totalPrice)
-      .reduce((prev: any, current: any) => prev + current, 0),
+      .map(({ price }) => price)
+      .reduce((prev: number, current: number) => prev + current, 0),
 });
 
 export const deliveryChargeState = selector({
