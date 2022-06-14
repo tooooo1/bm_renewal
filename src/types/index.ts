@@ -23,11 +23,11 @@ export type SidebarProps = {
 };
 
 export type GoodsProps = {
-  id?: number;
-  imgSrc?: string;
-  name?: string;
-  price?: number;
-  count?: number;
+  id: number;
+  imgSrc: string;
+  name: string;
+  price: number;
+  count: number;
   totalPrice?: number;
   onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 };
