@@ -1,10 +1,10 @@
-import { useCallback, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { useNavigate } from 'react-router-dom';
-import logo from '@assets/image/logo2.png';
 import cartPNG from '@assets/image/cart.png';
-import Sidebar from './SideBar';
+import logo from '@assets/image/logo2.png';
+import { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 import { TwoStringProps } from '../types';
+import Sidebar from './SideBar';
 
 const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);

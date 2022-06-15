@@ -3,7 +3,7 @@ import { Goods, TabBar, SideBar } from '../components';
 import useItems from '@hooks/useItems';
 import { GoodsProps, TwoStringProps, TabContents } from '../types';
 import styled, { keyframes } from 'styled-components';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { lineItemState } from '../atoms';
 
 const menu: TwoStringProps[] = [
@@ -21,21 +21,27 @@ const checkList: TabContents = {
 const Food = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const goodsItem = useItems();
-  const setCart = useSetRecoilState(lineItemState);
+  const [cartList, setCartList] = useRecoilState(lineItemState);
 
   const handleCartOpen = useCallback((isOpen: boolean) => {
     setIsCartOpen(isOpen);
   }, []);
 
-  const cart = useCallback(() => {
+  const handleCart = useCallback(() => {
     setIsCartOpen(!isCartOpen);
 
-    // setCart((prev) => [
-    //   ...prev,
-    //   {
-    //     id: 1,
-    //   },
-    // ]);
+    setCartList((prev) => [
+      ...prev,
+      {
+        id: 1,
+        imgSrc: 'hi',
+        name: 'string',
+        price: 100,
+        count: 1,
+      },
+    ]);
+
+    console.log(cartList);
   }, []);
 
   return (
@@ -45,7 +51,7 @@ const Food = () => {
       <div className="vpack w(70%) m(auto) p(100/0)">
         <div className="hbox flex-wrap">
           {goodsItem.map((option: GoodsProps) => (
-            <Goods key={option.name} onClick={cart} {...option} />
+            <Goods key={option.name} onClick={handleCart} {...option} />
           ))}
         </div>
         <TabBar menu={menu} checkList={checkList} />

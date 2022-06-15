@@ -1,17 +1,17 @@
 import { useEffect, useRef } from 'react';
-import CartItem from './CartItem';
-import { GoodsProps, SidebarProps } from '../../types';
 // import { useCookies } from 'react-cookie';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import styled from 'styled-components';
-import useItems from '../../hooks/useItems';
 // import CartTotal from './CartTotal';
-import { useRecoilValue } from 'recoil';
+import { lineItemState } from '../../atoms';
 import { totalPriceState, deliveryChargeState } from '../../selectors';
+import { GoodsProps, SidebarProps } from '../../types';
+import CartItem from './CartItem';
 
-const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
+const SideBar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
+  const cartItem = useRecoilValue(lineItemState);
   const totalPrice = useRecoilValue(totalPriceState);
   // const deliveryCharge = useRecoilValue(deliveryChargeState);
-  const cartItems = useItems();
   // const [cookies, setCookie, removeCookie] = useCookies([
   //   'AccessToken',
   //   'RefreshToken',
@@ -20,7 +20,7 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
   const sidebarRef = useRef(null);
 
   const saveToLocalStorage = () => {
-    localStorage.setItem('cartState', JSON.stringify(cartItems));
+    localStorage.setItem('cartState', JSON.stringify(cartItem));
   };
 
   const onClickOutside = (event: any) => {
@@ -54,7 +54,7 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
             <Close />
           </button>
         </div>
-        {cartItems.map((option: GoodsProps, i) => (
+        {cartItem.map((option: GoodsProps, i) => (
           <CartItem key={option.name ? option.name.toString() : i} {...option} />
         ))}
       </div>
@@ -74,7 +74,7 @@ const Sidebar = ({ onSidebarOpen, isOpen }: SidebarProps) => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
 
 const Close = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

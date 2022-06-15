@@ -1,10 +1,10 @@
-import Banner from '../assets/image/banner.png';
-import BottomBanner from '../assets/image/bottombanner.png';
-import sushi from '../assets/menu/sushi.png';
-import jajangmyeon from '../assets/menu/jajangmyeon.png';
-import chicken from '../assets/menu/chicken.png';
-import rice from '../assets/menu/rice.png';
-import cupcake from '../assets/menu/cupcake.png';
+import Banner from '@assets/image/banner.png';
+import BottomBanner from '@assets/image/bottombanner.png';
+import sushi from '@assets/menu/sushi.png';
+import jajangmyeon from '@assets/menu/jajangmyeon.png';
+import chicken from '@assets/menu/chicken.png';
+import rice from '@assets/menu/rice.png';
+import cupcake from '@assets/menu/cupcake.png';
 import { MenuItem, Discount } from '../components';
 import { discountProps, TwoStringProps } from '../types';
 

@@ -1,5 +1,5 @@
-import { GoodsProps } from '../../types';
 import sushi from '@assets/menu/sushi.png';
+import { GoodsProps } from '../../types';
 
 const CartItem = ({ imgSrc, name, price, count }: GoodsProps) => {
   return (

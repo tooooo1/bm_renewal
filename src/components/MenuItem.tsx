@@ -1,5 +1,5 @@
-import { TwoStringProps } from '../types';
 import { useNavigate } from 'react-router-dom';
+import { TwoStringProps } from '../types';
 
 const MenuItem = ({ title, option }: TwoStringProps) => {
   const navigate = useNavigate();

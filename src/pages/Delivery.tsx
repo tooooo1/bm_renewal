@@ -1,5 +1,5 @@
-import ReactPlayer from 'react-player';
 import { useEffect, useState } from 'react';
+import ReactPlayer from 'react-player';
 
 const Delivery = () => {
   const [count, setCount] = useState<number>(0);
