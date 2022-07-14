@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
 const FindID = () => {
-  const [name, setName] = useState<string>('');
+  const [name, setName] = useState('');
 
   const onChangeName = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);

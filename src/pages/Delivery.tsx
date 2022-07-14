@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 
 const Delivery = () => {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => setCount(count + 1), 1000);

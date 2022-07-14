@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { TabBarProps, TwoStringProps } from '../types';
 
 const TabBar = ({ menu, checkList }: TabBarProps) => {
-  const [menuCheck, setMenuCheck] = useState<number>(0);
-  const [check, setCheck] = useState<string>(menu[0].option);
+  const [menuCheck, setMenuCheck] = useState(0);
+  const [check, setCheck] = useState(menu[0].option);
 
   const menuList = menu.map((i: TwoStringProps, index: number) => (
     <StyledMenuTitle

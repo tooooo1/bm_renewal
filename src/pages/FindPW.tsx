@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
 
 const FindPW = () => {
-  const [name, setName] = useState<string>('');
-  const [id, setId] = useState<string>('');
+  const [name, setName] = useState('');
+  const [id, setId] = useState('');
 
   const onChangeName = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);

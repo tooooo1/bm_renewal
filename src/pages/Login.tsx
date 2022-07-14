@@ -5,8 +5,8 @@ import useLogin from '../hooks/useLogin';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [id, setId] = useState<string>('');
-  const [pw, setPw] = useState<string>('');
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
   const login = useLogin({ id, pw });
 
   const onChangeID = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
